@@ -1,0 +1,70 @@
+;; Object cpp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cpp/"
+  :tables
+  (list
+    (semanticdb-table "array_1.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("vector" include (:system-flag t) nil [21 38])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [39 59])
+            ("main" function (:type "int") nil [60 781]))          
+      :file "array_1.cpp"
+      :pointmax 782
+      :fsize 810
+      :lastmodtime '(22215 23955 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "recoding.cpp"
+      :major-mode 'c++-mode
+      :tags 
+        '( ("iostream" include (:system-flag t) nil [1 20])
+            ("vector" include (:system-flag t) nil [21 38])
+            ("string" include (:system-flag t) nil [39 56])
+            ("std::string" using (:type ("std::string" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [57 75])
+            ("std::cout" using (:type ("std::cout" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [76 92])
+            ("std::cin" using (:type ("std::cin" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [93 108])
+            ("std::endl" using (:type ("std::endl" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [109 125])
+            ("std::vector" using (:type ("std::vector" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [126 144])
+            ("str" function
+               (:arguments 
+                  ( ("i" variable (:type "int") (reparse-symbol arg-sub-list) [565 571]))                  
+                :type ("string" type (:type "class") nil nil))
+                nil [553 675])
+            ("main" function (:type "int") nil [676 729]))          
+      :file "recoding.cpp"
+      :pointmax 730
+      :fsize 766
+      :lastmodtime '(22221 55457 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "1.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("main" function (:type "int") nil [21 77]))          
+      :file "1.c"
+      :pointmax 78
+      :fsize 83
+      :lastmodtime '(22215 25856 0 0)
+      :unmatched-syntax nil))
+  :file "!drive_d!works!cpp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
