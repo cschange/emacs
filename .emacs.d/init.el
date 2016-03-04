@@ -32,14 +32,13 @@
 (set-frame-width (selected-frame) 180)                ;设置宽度
 (set-frame-height (selected-frame) 45)                ;设置高度
 (set-frame-position (selected-frame) 150 15)          ;设置左和top间距
-
 ;;启动自动最大化(数据自己调整，注意格式，如(top . 0)，圆点前后都要留有空格)
 ;;(setq initial-frame-alist '((top . 0) (left . 0) (width . 142) (height . 49)))
 ;;-----------------------Frame Custom End-------------------------------------
 
 ;;-----------------------功--能--设--置----------------------------------------
 (global-linum-mode 'linum-mode)               ; 显示行号
-(setq linum-format "%d|")                    ; 行号显示格式
+(setq linum-format "%d|")                     ; 行号显示格式
 (column-number-mode 1)                        ; 显示列号
 (blink-cursor-mode 1)  		              ; 0-为光标闪烁
 (display-time-mode t)                         ; 显示时间
@@ -49,7 +48,7 @@
 (desktop-save-mode 1)                         ; 记住上一次打开的文件
 (tool-bar-mode 0)                             ; 取消工具栏
 (set-scroll-bar-mode nil)                     ; 取消滚动栏
-(setq visible-bell t)                         ; 关闭烦人的出错时的提示声
+(setq visible-bell t)                         ; 关闭出错时的提示声
 (setq inhibit-startup-message t)              ; 关闭emacs启动时的画面
 (setq gnus-inhibit-startup-message t)         ; 关闭gnus启动时的画面
 (global-font-lock-mode 1)                     ; 高亮显示区域选择
@@ -77,42 +76,17 @@
 (add-hook 'c++-mode-hook
 '(lambda()
    (c-set-style "stroustrup")))
-;;---------------------Windows Switch-----------------------------------------
+;;---------------------Frame Switch-----------------------------------------
 ;;窗口切换快捷键
 (global-set-key (kbd "C-<left>") 'windmove-left)    ;左边窗口
 (global-set-key (kbd "C-<right>") 'windmove-right)  ;右边窗口
 (global-set-key (kbd "C-<up>") 'windmove-up)        ;上边窗口
 (global-set-key (kbd "C-<down>") 'windmove-down)    ;下边窗口
-;;---------------------Windows switch End-------------------------------------
+;;---------------------Frame  switch End-------------------------------------
 ;;---------------------About Users--------------------------------------------
 (setq user-full-name "cschange")
 (setq user-mail-address "imcsch@163.com")
 ;;---------------------About Users End----------------------------------------
-
-;;---------------------窗口界面设置 方法2---------------------------------------
-;(set-foreground-color "grey")
-;(set-background-color "#002b36")
-;(set-cursor-color "LightYellow3")
-;(set-mouse-color "LightYellow3")
-;;(customize-set-variable 'scroll-bar-mode 'right))
-;;设置滚动栏在窗口右侧，而默认是在左侧
-;;启动设置
-;(setq default-frame-alist
-            ; '((vertical-scroll-bars)
-               ;(top . 10)
-               ;(left . 150)
-               ;(width . 120)
-               ;(height . 35)
-              ; (background-color . "#002b36")
-              ; (foreground-color . "grey")
-              ; (cursor-color . "LightYellow3")
-              ; (mouse-color . "LightYellow3")
-               ;(tool-bar-lines . 0)         ;工具栏设置
-               ;(menu-bar-lines . 1)
-               ;(right-fringe)
-              ; (left-fringe)))
-
-;;------------窗口界面设置方法2结束---------------------------------------------
 ;;-----------------------------语法高亮显示背景和二次选择背景--------------------
 ;; 设置另外一些颜色：语法高亮显示的背景和主题，区域选择的背景和主题，二次选择的背景和选择
 (set-face-foreground 'highlight "white")
@@ -153,52 +127,13 @@
 
 ;;------------------------ -定--制--操--作--习--惯--End-----------------------
 ;;--------------------------自--动--补--全--括--号----------------------------
-(setq skeleton-pair-alist '(
-                            (?` ?` _ "''")
-                            (?\" _ "\"" >)
-                            (?\' _ "\'" >)
-                            (?\( _ ")")  ;;?/(后加?表示前面加空格
-                            (?\[ _ "]")
-                                        ;(?{ \n > _ \n ?} >)
-                            (?\{ _ "}")))
-(setq skeleton-pair t)
-(global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\'") 'skeleton-pair-insert-maybe) ;;or global
-(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
 ;;c/c++大括号+回车 自动换行匹配格式
 (when (fboundp 'electric-pair-mode) 
 (electric-pair-mode)) 
 (when (eval-when-compile (version< "24.4" emacs-version)) 
 (electric-indent-mode 1))
-;; c/c++括号补全
-(defun my-c-mode-auto-pair ()
-  (interactive)
-  (make-local-variable 'skeleton-pair-alist)
-  (setq skeleton-pair-alist '(
-
-    (?\( _ ")")  ;;?/(后加?表示前面加空格
-    ;(?{ \n > _ \n ?} >)
-    (?\{ _ "}")))
-  (setq skeleton-pair t)
-  (local-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-  (local-set-key (kbd "{") 'skeleton-pair-insert-maybe))
-(add-hook 'c-mode-hook 'my-c-mode-auto-pair)
-(add-hook 'c++-mode-hook 'my-c-mode-auto-pair)
 ;;输入左边的括号，就会自动补全右边的部分.包括(), "", [] , {} , 等等。
 ;;------------------------自--动--补--全--括--号--End--------------------------
-;;------------------------sr-speedbar--配--置---------------------------------
-;; (require 'sr-speedbar)  
-;;  (setq speedbar-show-unknown-files t)  
-;;  (setq speedbar-use-images nil)  
-;;  (setq sr-speedbar-width 20)  
-;; (setq sr-speedbar-right-side nil)  
-   
-;; (global-set-key (kbd "<f5>") (lambda()  
-;;                                (interactive)  
-;;                                (sr-speedbar-toggle)))
-;;----------------------sr-speedbar配--置--End-------------------------------
 ;;----------------------Tabbar--Custon--Start--------------------------------
 (add-to-list 'load-path "~/.emacs.d/elpa/tabbar-20141109.143/")
 (require 'tabbar)
@@ -219,16 +154,13 @@
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 8)
 (setq tab-stop-list ())
-;; (loop for x downfrom 40 to 1 do
-;;       (setq tab-stop-list (cons (* x 4) tab-stop-list)))
 ;;-------------------Tab--Custom--End---------------------------------------
 ;;-------------------ECB--Custon--Start-------------------------------------
 (add-to-list 'load-path "~/.emacs.d/elpa/ecb-20140215.114")
 (require 'ecb)
-;;(setq ecb-tip-of-the-day nil) ;;不显示每日的提醒功能
 (global-set-key (kbd "<f7>") 'ecb-minor-mode)
 ;(global-set-key (kbd "<f7>") 'ecb-activate)
-(setq   ecb-tip-of-the-day nil 
+(setq   ecb-tip-of-the-day nil               ;;不显示每日的提醒功能
                ecb-tree-indent 4 
                ecb-windows-height 0.5 
                ecb-windows-width 0.15 
@@ -281,32 +213,6 @@
 ;;elpy
 (package-initialize)
 (elpy-enable)
-;;########ipython
+;;ipython
 (elpy-use-ipython)
-;;######################
-;; (require 'python )
-;; ;; use ipython 
-;; (setq python-command "ipython") 
-;; (setq 
-;;       python-shell-interpreter "ipython" 
-;;       python-shell-interpreter-args "" 
-;;       python-shell-prompt-regexp "In \\[[0-9]+\\]: " 
-;;       python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: " 
-;;       python-shell-completion-setup-code "from IPython.core.completerlib import module_completion" 
-;;       python-shell-completion-string-code "';'.join(__IP.complete('''%s'''p))\n" 
-;;       python-shell-completion-module-string-code "")
-;; (add-hook 'python-mode-hook
-;;     (lambda ()
-;;         (set-variable 'indent-tabs-mode nil)
-;;       (define-key python-mode-map (kbd "RET") 'newline-and-indent )))
-;;;;;;;;;;;;;;;;;;;;;;;; end python ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(setq default-buffer-file-coding-system 'utf-8-unix)
-;; (set-language-environment 'chinese-gbk)
-;; (set-keyboard-coding-system 'utf-8)
-;; (set-clipboard-coding-system 'utf-8)
-;; (set-terminal-coding-system 'utf-8)
-;; (set-buffer-file-coding-system 'utf-8)
-;; (set-selection-coding-system 'utf-8)
-;; (modify-coding-system-alist 'process "*" 'utf-8)
-;; (setq default-process-coding-system '(utf-8 . utf-8))
-;; (setq-default pathname-coding-system 'utf-8)
+
