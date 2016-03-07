@@ -1,33 +1,7 @@
-;;; tango-dark-theme.el --- Tango-based custom theme for faces
-
-;; Copyright (C) 2010-2015 Free Software Foundation, Inc.
-
-;; Authors: Chong Yidong <cyd@stupidchicken>
-;;          Jan Moringen <jan.moringen@uni-bielefeld.de>
-
-;; This file is part of GNU Emacs.
-
-;; GNU Emacs is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-
-;;; Commentary
-
-;; The colors in this theme come from the Tango palette, which is in
-;; the public domain: http://tango.freedesktop.org/
 
 ;;; Code:
 
-(deftheme cschange-one
+(deftheme cschange
   "Face colors using the Tango palette (dark background).
 Basic, Font Lock, Isearch, Gnus, Message, Ediff, Flyspell,
 Semantic, and Ansi-Color faces are included.")
@@ -48,7 +22,7 @@ Semantic, and Ansi-Color faces are included.")
       (red-0 "#ff4b4b")  (alum-5.5 "#41423f") (alum-7 "#2b303b"))
 
   (custom-theme-set-faces
-   'cschange-one
+   'cschange
    ;; Ensure sufficient contrast on low-color terminals.
    `(default ((((class color) (min-colors 4096))
 	       (:foreground ,alum-1 :background ,alum-6))
@@ -164,11 +138,11 @@ Semantic, and Ansi-Color faces are included.")
    `(semantic-unmatched-syntax-face ((,class (:underline ,red-1)))))
 
   (custom-theme-set-variables
-   'cschange-one
+   'cschange
    `(ansi-color-names-vector [,alum-7 ,red-0 ,cham-0 ,butter-1
 			      ,blue-1 ,plum-1 ,blue-0 ,alum-1])))
 
-(provide-theme 'cschange-one)
+(provide-theme 'cschange)
 
 ;; Local Variables:
 ;; no-byte-compile: t

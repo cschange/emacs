@@ -84,8 +84,8 @@
 (global-set-key (kbd "C-<down>") 'windmove-down)    ;下边窗口
 ;;---------------------Frame  switch End-------------------------------------
 ;;---------------------About Users--------------------------------------------
-(setq user-full-name "cschange")
-(setq user-mail-address "imcsch@163.com")
+(setq user-full-name "yourname")
+(setq user-mail-address "yourname@domain.com")
 ;;---------------------About Users End----------------------------------------
 ;;-----------------------------语法高亮显示背景和二次选择背景--------------------
 ;; 设置另外一些颜色：语法高亮显示的背景和主题，区域选择的背景和主题，二次选择的背景和选择
@@ -117,7 +117,7 @@
 ;;括号匹配时可以高亮显示另外一边的括号，但光标不会烦人的跳到另一个括号处。
 (mouse-avoidance-mode 'animate)
 ;;光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线。
-(setq frame-title-format "cschange@%f") ;cschange@%b%f
+(setq frame-title-format "yourname@%f") ;cschange@%b%f
 ;;在标题栏显示buffer名，去掉emacs@xxx.com
 (setq uniquify-buffer-name-style 'forward);;好像没起作用
 ;; 当有两个文件名相同的缓冲时，使用前缀的目录名做 buffer 名字，不用原来的foobar 形式。
