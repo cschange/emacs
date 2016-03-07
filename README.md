@@ -84,6 +84,7 @@ ubuntu:
        复制cschange主题文件到 themes目录 命令如下  sudo cp -p ~/cschange-theme.el /opt/emacs/......(不好意思不太记得)  
        
 
-       好了，现在打开emacs，写一个1.py（print('h)）---->c-c c-c.
+       好了，现在打开emacs，写一个1.py   print('h')---->c-c c-c.
        写一个1.cpp  c-x 3  按f9   然后输入 c++ -o a.out 1.cpp   然后./a.out
                       
+       
