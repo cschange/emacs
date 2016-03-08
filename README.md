@@ -92,12 +92,18 @@
      * emacs 安装：
      * 解压 emacs-24.5.tar.xz  tar -xvf emacs-24.5.tar.xz 得到emacs-24.5
      * 打开终端步骤如下：
-               1，sudo apt-get install build-essential       （编译工具）
-               2，sudo apt-get build-dep emacs24
-               3，cd emacs-24.5(Emacs解压之后所在的目录)
-               4,./configure --prefix=/opt/emacs
-               5,make
-               6,make install
+     
+         sudo apt-get install build-essential       （编译工具）
+
+         sudo apt-get build-dep emacs24
+         
+         cd emacs-24.5(Emacs解压之后所在的目录)
+         
+         ./configure --prefix=/opt/emacs
+         
+         make
+         
+         make install
      * llvm+clang:
             tar -xvf clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04.tar.xz
             将解压所得文件夹下目录复制到/opt/llvm sudo cp -Rfp ./clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04
@@ -120,3 +126,5 @@
 
        好了，现在打开emacs，写一个1.py   print('h')---->c-c c-c.
        写一个1.cpp  c-x 3  按f9   然后输入 c++ -o a.out 1.cpp   然后./a.out
+                      
+       
