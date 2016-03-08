@@ -1,28 +1,28 @@
-# emacs
-# 这是一份非常简单的Emacs+llvm+ming-w64(windows)+python的配置文件。
-# 上传的目的在于，让每一个对emacs感兴趣的朋友能够拿到一个已经做好了简单入门配置的emacs
-# 记得浏览init.el文件，把"yourname"更改成你的个人信息，还有更改你的个人邮箱
-# 一些写在之前的话，如果部分文件你无法找到，可以发邮件到我的邮箱cschange@yeah.net
-# 所有提供的文件都可以在相关官网上找到。
-# 最最重要的是，不管遇到什么问题，一定要善用搜索，baidu.com，bing.com google.com sogou.com
-# 如果你决定要学习这些东西，搜索引擎将会协助你解决很多问题。
+ emacs
+ 这是一份非常简单的Emacs+llvm+ming-w64(windows)+python的配置文件。
+ 上传的目的在于，让每一个对emacs感兴趣的朋友能够拿到一个已经做好了简单入门配置的emacs
+ 记得浏览init.el文件，把"yourname"更改成你的个人信息，还有更改你的个人邮箱
+ 一些写在之前的话，如果部分文件你无法找到，可以发邮件到我的邮箱cschange@yeah.net
+ 所有提供的文件都可以在相关官网上找到。
+ 最最重要的是，不管遇到什么问题，一定要善用搜索，baidu.com，bing.com google.com sogou.com
+ 如果你决定要学习这些东西，搜索引擎将会协助你解决很多问题。
 * 改动说明
-# 所有的自定义配置文件都存放在 ~/.emacs.d/init.el中，以下简称配置文件
-# 多数配置都已经设置配置接口，可以在配置文件中随意修改，已附带中文说明。
-# 具体详细的配置可以查看init.el文件。
-# 有必要说明的是，此套配置在Linux（ubuntu）,windows 10,windows7下做了测试。其他环境未知。
+ 所有的自定义配置文件都存放在 ~/.emacs.d/init.el中，以下简称配置文件
+ 多数配置都已经设置配置接口，可以在配置文件中随意修改，已附带中文说明。
+ 具体详细的配置可以查看init.el文件。
+ 有必要说明的是，此套配置在Linux（ubuntu）,windows 10,windows7下做了测试。其他环境未知。
 * 使用前需要做的准备，所需文件：
 windows :
-1，x86_64-5.3.0-release-posix-seh-rt_v4-rev0（mingw64）
-2,LLVM-3.7.1-win64 (LLVM+clang)
-3,python-3.5.1-amd64,
-4,get-pip.py
-5，emacs-24.5-bin-i686-mingw32.zip
-5，基于emacs-tango-darkblue修改的cschange-one-theme.el;
-ubuntu:
-1,clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04.tar.xz
-2,emacs-24.5.tar.xz
-3,Python-3.5.1.tar.xz
+** x86_64-5.3.0-release-posix-seh-rt_v4-rev0（mingw64）
+** LLVM-3.7.1-win64 (LLVM+clang)
+** python-3.5.1-amd64,
+** get-pip.py
+** emacs-24.5-bin-i686-mingw32.zip
+** 基于emacs-tango-darkblue修改的cschange-one-theme.el;
+** ubuntu:
+** clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04.tar.xz
+** emacs-24.5.tar.xz
+** Python-3.5.1.tar.xz
 
 * Setup ##### 安装说明
 windows:
