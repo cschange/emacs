@@ -105,26 +105,38 @@
          
          make install
      * llvm+clang:
+     
             tar -xvf clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04.tar.xz
+     
             将解压所得文件夹下目录复制到/opt/llvm sudo cp -Rfp ./clang+llvm-3.7.1-x86_64-linux-gnu-ubuntu-14.04
             /opt/llvm;(当然你也可以cp到其他目录)
+            
             python的安装同上emacs，跳过1，2步。（ubuntu自带python2.7和3.4）这里可以省略。
 
     *  PATH添加：
+        
         sudo vi ~/.bashrc （sudo gedit ~/.bashrc）末尾添加
+        
         PATH=$PATH:/opt/llvm/bin
+        
         PATH=$PATH:/opt/emacs/bin
+        
         保存退出后 运行 source .bashrc
        
        python中的pip 同上。不同的是，ubuntu在安装时需要添加sudo.
+       
        sudo python get-pip.py
+       
        sudo pip install rope
+       
        ...
        
-       复制cschange主题文件到 themes目录 命令如下  sudo cp -p ~/cschange-theme.el /opt/emacs/......(不好意思不太记得)  
+    * 复制cschange主题文件到 themes目录 命令如下  sudo cp -p ~/cschange-theme.el /opt/emacs/......(不好意思不太记得)  
        
 
+       
        好了，现在打开emacs，写一个1.py   print('h')---->c-c c-c.
+       
        写一个1.cpp  c-x 3  按f9   然后输入 c++ -o a.out 1.cpp   然后./a.out
                       
        
