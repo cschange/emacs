@@ -131,7 +131,7 @@
        
             ...
        
-    * 复制cschange主题文件到 themes目录 命令如下  sudo cp -p ~/Dtango-theme.el /opt/emacs/......(不好意思不太记得)  
+    * 复制Dtango主题文件到 themes目录 命令如下  sudo cp -p ~/Dtango-theme.el /opt/emacs/......(不好意思不太记得)  
        
 
        
