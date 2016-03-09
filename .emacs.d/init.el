@@ -6,7 +6,7 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(column-number-mode t)
- '(custom-enabled-themes (quote (cschange-one)))
+ '(custom-enabled-themes (quote (Dtango)))
  '(display-time-mode t)
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")

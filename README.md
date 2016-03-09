@@ -33,7 +33,7 @@
 
     emacs-24.5-bin-i686-mingw32.zip
 
-    基于emacs-tango-darkblue修改的cschange-one-theme.el;
+    基于emacs-tango-darkblue修改的Dtango-theme.el;
  
  * ubuntu:
  
@@ -77,7 +77,7 @@
      * pip install jedi
      * pip install ipython
 
-* 关于主题，复制cschange-one-theme.el 到  C:\emacs\share\emacs\24.5\etc\themes\目录下。
+* 关于主题，复制Dtango-theme.el 到  C:\emacs\share\emacs\24.5\etc\themes\目录下。
 
 * 到此，如果你的步骤都正确的话，启动emacs.C-x-f，~/.emacs.d/init.el查看配置文件，了解其中配置的快捷键。
 
@@ -131,7 +131,7 @@
        
             ...
        
-    * 复制cschange主题文件到 themes目录 命令如下  sudo cp -p ~/cschange-theme.el /opt/emacs/......(不好意思不太记得)  
+    * 复制cschange主题文件到 themes目录 命令如下  sudo cp -p ~/Dtango-theme.el /opt/emacs/......(不好意思不太记得)  
        
 
        
