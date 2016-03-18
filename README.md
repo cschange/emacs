@@ -1,4 +1,11 @@
 # emacs
+* About This
+* *  配置会不停的更新，在Dtango-theme.el里面有新增对代码高亮的颜色修改入口，现在只是简单版的，随后的日子会不断的把个人对emacs的理解都用文档或是配置内部的注释的形式更新出来。Dtango也会不断的完善，目前已知的问题是company的补全会因为窗口的大小和代码的长短问题而影响布局。另外，二次选择的颜色锁定为前景白色，背景灰色。如果有大神或者哪位兄弟有自己的理解欢迎交流，更欢迎大神的指导。
+
+* *  个人推荐在Archlinux下使用。如果你是Archlinux + gnome 装好系统之后 pacman -S emacs然后导入配置就好。emacs在 /usr/share目录下。
+
+*  * updating 
+  
 * 这是一份非常简单的Emacs+llvm+ming-w64(windows)+python的配置文件。
  
  * 上传的目的在于，让每一个对emacs感兴趣的朋友能够拿到一个已经做好了简单入门配置的emacs
@@ -140,3 +147,5 @@
        写一个1.cpp  c-x 3  按f9   然后输入 c++ -o a.out 1.cpp   然后./a.out
                       
        
+       
+
