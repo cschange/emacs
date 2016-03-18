@@ -24,7 +24,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "YaHei Consolas Hybrid" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
-;;'(default ((t (:family "YaHei Consolas Hybrid" :foundry "outline" :slant normal :weight normal :height 120 :width normal))))
+;;'(default ((t (:family "YaHei Consolas Hybrid" :foundry "microsoft" :slant normal :weight normal :height 120 :width normal))))
 ; (load-theme ' t)
 ;;-------------------------Custom Start--------------------------------------
 
@@ -40,7 +40,7 @@
 (global-linum-mode 'linum-mode)               ; 显示行号
 (setq linum-format "%d|")                     ; 行号显示格式
 (column-number-mode 1)                        ; 显示列号
-(blink-cursor-mode 1)  		              ; 0-为光标闪烁
+(blink-cursor-mode 1)  		              ; 0-光标闪烁
 (display-time-mode t)                         ; 显示时间
 (setq display-time-24hr-format t)             ; 设置时间为24小时
 (setq display-time-day-and-date t)            ; 时间显示包括日期和具体时间
@@ -61,9 +61,10 @@
 
 ;;------------------------功--能--设--置--End----------------------------------
 ;;------------------------全--局--快--捷--键--设--置----------------------------
-(global-set-key [f4] 'kill-this-buffer)       ;F4,kill键，习惯设置，关闭当前buffer 
-(global-set-key [f9] 'eshell)                 ;定义F9为eshell命令模式
-(global-set-key [f12] 'menu-bar-mode)         ;定义F12开关菜单栏
+(global-set-key [f4] 'kill-this-buffer)       ;F4,关闭当前buffer
+(global-set-key [f5] 'kill-buffer)            ;Opensuse 不能使用F4
+(global-set-key [f9] 'eshell)                 ;打开eshell命令模式
+(global-set-key [f12] 'menu-bar-mode)         ;F12开关菜单栏
 ;;------------------------快--捷--键--设--置--End-------------------------------
 ;;------------------------语--法--高--亮----------------------------------------
 (setq global-font-lock-mode t)                ; 进行语法加亮。
@@ -84,17 +85,12 @@
 (global-set-key (kbd "C-<down>") 'windmove-down)    ;下边窗口
 ;;---------------------Frame  switch End-------------------------------------
 ;;---------------------About Users--------------------------------------------
-(setq user-full-name "yourname")
-(setq user-mail-address "yourname@domain.com")
+(setq user-full-name "cschange")
+(setq user-mail-address "imcsch@163.com")
 ;;---------------------About Users End----------------------------------------
 ;;-----------------------------语法高亮显示背景和二次选择背景--------------------
 ;; 设置另外一些颜色：语法高亮显示的背景和主题，区域选择的背景和主题，二次选择的背景和选择
-(set-face-foreground 'highlight "white")
-(set-face-background 'highlight "Snow4")
-(set-face-foreground 'region "white")
-(set-face-background 'region "Snow4")
-;;(set-face-foreground 'secondary-selection "skyblue")
-;;(set-face-background 'secondary-selection "darkblue")
+;;二次选择设置在themes:region中
 ;;----------------------------二次选择设置结束----------------------------------
 ;;-------------------------------定制操作习惯-----------------------------------
 (setq font-lock-maximum-decoration t)
@@ -117,7 +113,7 @@
 ;;括号匹配时可以高亮显示另外一边的括号，但光标不会烦人的跳到另一个括号处。
 (mouse-avoidance-mode 'animate)
 ;;光标靠近鼠标指针时，让鼠标指针自动让开，别挡住视线。
-(setq frame-title-format "yourname@%f") ;cschange@%b%f
+(setq frame-title-format "cschange@%f") ;cschange@%b%f
 ;;在标题栏显示buffer名，去掉emacs@xxx.com
 (setq uniquify-buffer-name-style 'forward);;好像没起作用
 ;; 当有两个文件名相同的缓冲时，使用前缀的目录名做 buffer 名字，不用原来的foobar 形式。
@@ -127,12 +123,12 @@
 
 ;;------------------------ -定--制--操--作--习--惯--End-----------------------
 ;;--------------------------自--动--补--全--括--号----------------------------
-;;c/c++大括号+回车 自动换行匹配格式
+;;括号补全+自动换行匹配格式
 (when (fboundp 'electric-pair-mode) 
 (electric-pair-mode)) 
 (when (eval-when-compile (version< "24.4" emacs-version)) 
 (electric-indent-mode 1))
-;;输入左边的括号，就会自动补全右边的部分.包括(), "", [] , {} , 等等。
+;;支持() {} [] '' ""
 ;;------------------------自--动--补--全--括--号--End--------------------------
 ;;----------------------Tabbar--Custon--Start--------------------------------
 (add-to-list 'load-path "~/.emacs.d/elpa/tabbar-20141109.143/")

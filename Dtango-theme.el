@@ -33,20 +33,30 @@ Basic, Font Lock, Isearch, Gnus, Message, Ediff, Flyspell,
 Semantic, and Ansi-Color faces are included.")
 
 (let ((class '((class color) (min-colors 89)))
-      ;; Tango palette colors.  ;;butter-1 #fce94f function color;
-      (butter-1 "#f9cb9c") (butter-2 "#edd400") (butter-3 "#c4a000")
-      (orange-1 "#FF3399") (orange-2 "#f57900") (orange-3 "#ce5c00") ;; orange-1 定义变量颜色；#FF9966
-      (choc-1 "#fff2cc") (choc-2 "#c17d11") (choc-3 "#8f5902")
-      (cham-1 "#8ae234") (cham-2 "grey50") (cham-3 "#4e9a06") ;;#73d216 cham-2注释颜色 
+      ;; Tango palette colors.
+      (butter-1 "#FF6666") (butter-2 "#edd400") (butter-3 "#c4a000")
+      (orange-1 "#CCCCFF") (orange-2 "#f57900") (orange-3 "#ce5c00")
+      
+      (choc-1 "#FFFFFF") (choc-2 "#c17d11") (choc-3 "#8f5902")
+      (cham-1 "#8ae234") (cham-2 "grey50") (cham-3 "#4e9a06") 
       (blue-1 "#729fcf") (blue-2 "#3465a4") (blue-3 "#204a87") 
-      (plum-1 "#e090d7") (plum-2 "#75507b") (plum-3 "#5c3566") ;;plum-1 #e090d7
+      (plum-1 "#CCCCFF") (plum-2 "#a4a4fd") (plum-3 "#8b8bfb") ;;plum-1 #e090d7
       (red-1 "#ef2929")  (red-2 "#cc0000")  (red-3 "#a40000")
       (alum-1 "#eeeeec") (alum-2 "#d3d7cf") (alum-3 "#babdb6")
-      (alum-4 "#888a85") (alum-5 "#808080") (alum-6 "#2b303b");;#002b36  alum = 状态条颜色
+      (alum-4 "#888a85") (alum-5 "#808080") (alum-6 "#2b303b")
       ;; Not in Tango palette; used for better contrast.
-      (cham-0 "#b4fa70") (blue-0 "#9fc5e8") (plum-0 "#e9b2e3") ;;cham-0 #b4fa70 cham-0 
-      (red-0 "#ff4b4b")  (alum-5.5 "#41423f") (alum-7 "#2b303b"))
-
+      (cham-0 "#b4fa70") (blue-0 "#99CCFF") (plum-0 "#FFCC99")
+      
+      (red-0 "#ff4b4b")  (alum-5.5 "#41423f") (alum-7 "#2b303b")
+      ;;custom by myself
+      ;;region : 二次选择  cursor-b 光标颜色 var-1 变量  type-1 类型
+      ;; string-1 字符串  keyword 关键字 func-1 函数 cons 常量域作用符
+      ;; builtin-1   comment-1 注释
+      (region-f   "#FFFFFF")    (region-b "#808080")  (cursor-f "#e9e9e9")
+      (var-1      "#FFFFFF")    (type-1   "#6666CC")  (string-1 "#FFFFFF")
+      (keyword-1  "#f9067f")    (func-1   "#CCFF66")  (cons-1   "#66CCFF")
+      (builtin-1  "#ccccff")    (comment-1 "grey50")  (pre-1    "#f9067f"))
+  ;;#FF9966
   (custom-theme-set-faces
    'Dtango
    ;; Ensure sufficient contrast on low-color terminals.
@@ -56,11 +66,11 @@ Semantic, and Ansi-Color faces are included.")
 	       (:foreground ,alum-1 :background "#222"))
 	      (,class
 	       (:foreground ,alum-1 :background "black"))))
-   `(cursor ((,class (:background ,butter-1))))
+   `(cursor ((,class (:background ,cursor-f))))
    ;; Highlighting faces
    `(fringe ((,class (:background ,alum-7))))
    `(highlight ((,class (:foreground ,alum-6 :background ,butter-2))))
-   `(region ((,class (:background ,alum-5))))
+   `(region ((,class (:background ,region-b  :foreground ,region-f))))
    `(secondary-selection ((,class (:background ,blue-3))))
    `(isearch ((,class (:foreground ,alum-1 :background ,orange-3))))
    `(lazy-highlight ((,class (:background ,choc-3))))
@@ -82,23 +92,23 @@ Semantic, and Ansi-Color faces are included.")
    `(warning ((,class (:foreground ,orange-1))))
    `(success ((,class (:foreground ,cham-1))))
    ;; Font lock faces
-   `(font-lock-builtin-face ((,class (:foreground ,plum-1))))
-   `(font-lock-comment-face ((,class (:foreground ,cham-2))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,"grey50"))))  ;;分隔符 注释
-   `(font-lock-doc-face ((t (:foreground ,"#e69138"))))
+   `(font-lock-builtin-face ((,class (:foreground ,builtin-1))))
+   `(font-lock-comment-face ((,class (:foreground ,comment-1))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,comment-1))))  ;;分隔符 注释
+   `(font-lock-doc-face ((t (:foreground ,"#e69138")))) 
    ;'(font-lock-doc-string-face    ((t (:foreground "red"))))
    `(font-lock-negation-char-face ((t (:foreground ,"red" :weight bold)))) ;;否定
-   `(font-lock-preprocessor-face ((t (:foreground ,"#CCCCFF" )))) ;;预处理器  #f16faa
+   `(font-lock-preprocessor-face ((t (:foreground , pre-1)))) ;;预处理器 
    `(font-lock-warning-face ((t (:foreground ,"red" :weight bold))))
    `(c-annotation-face ((t (:inherit font-lock-constant-face))))
-   `(font-lock-constant-face ((,class (:foreground ,plum-0))))
-   `(font-lock-function-name-face ((,class (:foreground ,butter-1))))
+   `(font-lock-constant-face ((,class (:foreground ,cons-1))))
+   `(font-lock-function-name-face ((,class (:foreground ,func-1))))
    ;;`(font-lock-regexp-grouping-construct ((t (:foreground ,"red" :weight bold)))) ;正则表达式
    ;;`(font-lock-regexp-grouping-backslash ((t (:foreground ,"red" :weight bold))))
-   `(font-lock-keyword-face ((,class (:foreground ,cham-0)))) ;;cham-0
-   `(font-lock-string-face ((,class (:foreground ,choc-1))))
-   `(font-lock-type-face ((,class (:foreground ,blue-0))))
-   `(font-lock-variable-name-face ((,class (:foreground ,orange-1))))
+   `(font-lock-keyword-face ((,class (:foreground ,keyword-1)))) 
+   `(font-lock-string-face ((,class (:foreground ,string-1))))
+   `(font-lock-type-face ((,class (:foreground ,type-1))))
+   `(font-lock-variable-name-face ((,class (:foreground ,var-1))))
    ;;ECB-background
    `(header-line ((,class (:foreground "black" :background "white"))))
    ;; Button and link faces
